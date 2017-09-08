@@ -37,7 +37,6 @@ $routes = [
     'createAccessKey',
     'getAllAccessKeys',
     'getSingleAccessKey',
-    'updateAccessKey',
     'revokeAccessKey',
     'unrevokeAccessKey',
     'deleteCollection',

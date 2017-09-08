@@ -381,19 +381,6 @@ Retrieves an Access Key definition.
 | projectId| String     | Project identifier.
 | customKey| String     | Key identifier.
 
-## KeenIO.updateAccessKey
-Updates an Access Key.
-
-| Field    | Type       | Description
-|----------|------------|----------
-| masterKey| Credentials| Your master key
-| projectId| String     | Project identifier.
-| customKey| String     | Key identifier.
-| name     | String     | A human readable name for the API Key. Limited to 256 characters.
-| isActive | Select     | A boolean that indicates if the key is currently active or revoked.
-| permitted| List       | A list of high level actions this key can perform. Possible options: “writes”, “queries”, “saved_queries”, “cached_queries”, “datasets”, “schema”
-| options  | JSON       | An object containing more details about the key’s permitted and restricted functionality.
-
 ## KeenIO.revokeAccessKey
 Revoking an Access Key.
 
