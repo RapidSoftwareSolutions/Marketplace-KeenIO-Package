@@ -27,73 +27,67 @@
             "accessKey"
         ]
     },
-    "blocks": [
-        {
-            "name": "createEvent",
-            "description": "Records a single event to a given event collection.",
-            "args": [
-                {
-                    "name": "writeKey",
-                    "type": "credentials",
-                    "info": "Your write key",
-                    "required": true
-                },
-                {
-                    "name": "projectId",
-                    "type": "String",
-                    "info": "Project identifier.",
-                    "required": true
-                },
-                {
-                    "name": "collectionName",
-                    "type": "String",
-                    "info": "Collection name.",
-                    "required": true
-                },
-                {
-                    "name": "data",
-                    "type": "JSON",
-                    "info": "Event body.",
-                    "required": true
-                }
-            ],
-            "vendorRequest": {
-                "url": "https:\/\/api.keen.io\/3.0\/projects\/{$data['projectId']}\/events\/{$data['collectionName']}",
-                "method": "post",
-                "requestParameters": [
-                    {
-                        "type": "body",
-                        "parameters": [
-                            "data"
-                        ]
-                    }
-                ],
-                "headers": {
-                    "Authorization": "{$data['writeKey']}",
-                    "Content-Type": "application\/json"
-                }
-            },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
-                {
-                    "name": "success",
-                    "info": "Success"
-                }
-            ]
+    "blocks": [{
+        "name": "createEvent",
+        "description": "Records a single event to a given event collection.",
+        "args": [{
+            "name": "writeKey",
+            "type": "credentials",
+            "info": "Your write key",
+            "required": true
         },
+            {
+                "name": "projectId",
+                "type": "String",
+                "info": "Project identifier.",
+                "required": true
+            },
+            {
+                "name": "collectionName",
+                "type": "String",
+                "info": "Collection name.",
+                "required": true
+            },
+            {
+                "name": "data",
+                "type": "JSON",
+                "info": "Event body.",
+                "required": true
+            }
+        ],
+        "vendorRequest": {
+            "url": "https:\/\/api.keen.io\/3.0\/projects\/{$data['projectId']}\/events\/{$data['collectionName']}",
+            "method": "post",
+            "requestParameters": [{
+                "type": "body",
+                "parameters": [
+                    "data"
+                ]
+            }],
+            "headers": {
+                "Authorization": "{$data['writeKey']}",
+                "Content-Type": "application\/json"
+            }
+        },
+        "callbacks": [{
+            "name": "error",
+            "info": "Error"
+        },
+            {
+                "name": "success",
+                "info": "Success"
+            }
+        ]
+    },
         {
             "name": "createMultipleEvents",
             "description": "Record multiple events across one or more event collections.",
-            "args": [
-                {
-                    "name": "writeKey",
-                    "type": "credentials",
-                    "info": "Your write key",
-                    "required": true
-                },
+            "args": [{
+                "name": "writeKey",
+                "type": "credentials",
+                "info": "Your write key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -110,24 +104,21 @@
             "vendorRequest": {
                 "url": "https:\/\/api.keen.io\/3.0\/projects\/{$data['projectId']}\/events",
                 "method": "post",
-                "requestParameters": [
-                    {
-                        "type": "body",
-                        "parameters": [
-                            "data"
-                        ]
-                    }
-                ],
+                "requestParameters": [{
+                    "type": "body",
+                    "parameters": [
+                        "data"
+                    ]
+                }],
                 "headers": {
                     "Authorization": "{$data['writeKey']}",
                     "Content-Type": "application\/json"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -137,13 +128,12 @@
         {
             "name": "getSingleEventCollection",
             "description": "Return schema information for a single event collection.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -164,11 +154,10 @@
                     "Authorization": "{$data['readKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -178,13 +167,12 @@
         {
             "name": "getAllCollections",
             "description": "Return schema information for all the event collections in a given project.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -199,11 +187,10 @@
                     "Authorization": "{$data['writeKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -213,13 +200,12 @@
         {
             "name": "getEventsCount",
             "description": "Return the number of events in the collection matching given criteria.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -248,21 +234,18 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "event_collection",
-                            "timeframe"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "event_collection",
+                        "timeframe"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -272,13 +255,12 @@
         {
             "name": "getUniqueEventsCount",
             "description": "Return the number of events with unique values, for a target property in a collection matching given criteria. A common use for this is to count the number of unique users who performed an event.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -316,22 +298,19 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "event_collection",
-                            "target_property",
-                            "timeframe"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "event_collection",
+                        "target_property",
+                        "timeframe"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -341,13 +320,12 @@
         {
             "name": "getMinimumValue",
             "description": "Return the minimum numeric value for a target property, among all events in a collection matching given criteria.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -385,22 +363,19 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "event_collection",
-                            "target_property",
-                            "timeframe"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "event_collection",
+                        "target_property",
+                        "timeframe"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -410,13 +385,12 @@
         {
             "name": "getMaximunValue",
             "description": "Return the maximum numeric value for a target property, among all events in a collection matching given criteria.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -454,22 +428,19 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "event_collection",
-                            "target_property",
-                            "timeframe"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "event_collection",
+                        "target_property",
+                        "timeframe"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -479,13 +450,12 @@
         {
             "name": "calculatePropertyValues",
             "description": "Calculate the sum of all numeric values for a target property, among all events in a collection matching given criteria.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -523,22 +493,19 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "event_collection",
-                            "target_property",
-                            "timeframe"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "event_collection",
+                        "target_property",
+                        "timeframe"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -548,13 +515,12 @@
         {
             "name": "calculateAveragePropertyValues",
             "description": "Calculate the average value for a target property, among all events in a collection matching given criteria.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -592,22 +558,19 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "event_collection",
-                            "target_property",
-                            "timeframe"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "event_collection",
+                        "target_property",
+                        "timeframe"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -617,13 +580,12 @@
         {
             "name": "calculateMedianPropertyValues",
             "description": "Calculate the median value for a target property, among all events in a collection matching given criteria.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -661,22 +623,19 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "event_collection",
-                            "target_property",
-                            "timeframe"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "event_collection",
+                        "target_property",
+                        "timeframe"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -686,13 +645,12 @@
         {
             "name": "calculatePercentileValue",
             "description": "Calculate a specified percentile value for a target property, among all events in a collection matching given criteria.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -736,23 +694,20 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "event_collection",
-                            "target_property",
-                            "percentile",
-                            "timeframe"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "event_collection",
+                        "target_property",
+                        "percentile",
+                        "timeframe"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -762,13 +717,12 @@
         {
             "name": "getUniqueValues",
             "description": "Return a list of unique property values for a target property, among all events in a collection matching given criteria.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -806,22 +760,19 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "event_collection",
-                            "target_property",
-                            "timeframe"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "event_collection",
+                        "target_property",
+                        "timeframe"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -831,13 +782,12 @@
         {
             "name": "createSavedQuery",
             "description": "Creating a Saved Query.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -863,20 +813,17 @@
                 "headers": {
                     "Authorization": "{$data['masterKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "query"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "query"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -886,13 +833,12 @@
         {
             "name": "getSavedQueryResult",
             "description": "Getting Saved Query Results.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -913,11 +859,10 @@
                     "Authorization": "{$data['masterKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -927,13 +872,12 @@
         {
             "name": "updateSavedQuery",
             "description": "To change the definition of the query, you must provide a complete new definition for the query in the \u201cquery\u201d field in the body.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -959,20 +903,17 @@
                 "headers": {
                     "Authorization": "{$data['masterKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "query"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "query"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -982,13 +923,12 @@
         {
             "name": "getAllSavedQueries",
             "description": "Getting All Saved Query Definitions.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1003,11 +943,10 @@
                     "Authorization": "{$data['masterKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1017,13 +956,12 @@
         {
             "name": "getSingleSavedQuery",
             "description": "Getting a Saved Query Definition.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1044,11 +982,10 @@
                     "Authorization": "{$data['masterKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1058,13 +995,12 @@
         {
             "name": "deleteSavedQuery",
             "description": "Delete a Saved Query.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1085,11 +1021,10 @@
                     "Authorization": "{$data['masterKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1099,13 +1034,12 @@
         {
             "name": "createCachedQuery",
             "description": "By turning on caching, you can tell Keen to automatically refresh your saved queries so you can get immediate results. We will calculate the results of your query on a set interval, and have them available for you immediately when you ask for the Saved Query result.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1123,8 +1057,7 @@
                     "type": "JSON",
                     "info": "Request query.",
                     "required": true
-                }
-                {
+                }, {
                     "name": "refreshRate",
                     "type": "String",
                     "info": "The refresh rate value is in seconds, and must be more than 1 hour (3,600 seconds) and less than 24 hours (86,400 seconds).",
@@ -1140,20 +1073,17 @@
                 "headers": {
                     "Authorization": "{$data['masterKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "refresh_rate"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "refresh_rate"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1163,13 +1093,12 @@
         {
             "name": "createCachedDataset",
             "description": "Create a Cached Dataset.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1213,22 +1142,19 @@
                 "headers": {
                     "Authorization": "{$data['masterKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "display_name",
-                            "query",
-                            "index_by"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "display_name",
+                        "query",
+                        "index_by"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1238,13 +1164,12 @@
         {
             "name": "getSingleDataset",
             "description": "Getting a Dataset Definition.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1265,11 +1190,10 @@
                     "Authorization": "{$data['readKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1279,13 +1203,12 @@
         {
             "name": "getCachedDatasetResult",
             "description": "Retrieving results from a Cached Dataset.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1320,21 +1243,18 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "query",
-                        "parameters": [
-                            "index_by",
-                            "timeframe"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "query",
+                    "parameters": [
+                        "index_by",
+                        "timeframe"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1344,13 +1264,12 @@
         {
             "name": "getProjectDatasets",
             "description": "Get list of Cached Dataset definitions for a project",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1379,21 +1298,18 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "query",
-                        "parameters": [
-                            "limit",
-                            "after_name"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "query",
+                    "parameters": [
+                        "limit",
+                        "after_name"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1403,13 +1319,12 @@
         {
             "name": "deleteCachedDataset",
             "description": "Delete a Cached Dataset.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1430,11 +1345,10 @@
                     "Authorization": "{$data['masterKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1444,13 +1358,12 @@
         {
             "name": "getProjectQueries",
             "description": "Return a list of available query resources with a GET request.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1465,11 +1378,10 @@
                     "Authorization": "{$data['masterKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1479,13 +1391,12 @@
         {
             "name": "createExtractionRequest",
             "description": "Creates an extraction request for full-form event data with all property values.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1538,25 +1449,22 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "event_collection",
-                            "timeframe",
-                            "filters",
-                            "timezone",
-                            "email",
-                            "latest"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "event_collection",
+                        "timeframe",
+                        "filters",
+                        "timezone",
+                        "email",
+                        "latest"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1566,13 +1474,12 @@
         {
             "name": "extractToCSV",
             "description": "Extract to CSV file",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your read key",
-                    "required": true
-                },
+            "args": [{
+                "name": "readKey",
+                "type": "credentials",
+                "info": "Your read key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1607,22 +1514,19 @@
                 "headers": {
                     "Authorization": "{$data['readKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "event_collection",
-                            "timeframe",
-                            "email"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "event_collection",
+                        "timeframe",
+                        "email"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1632,13 +1536,12 @@
         {
             "name": "getSingleProject",
             "description": "Returns information about a project.",
-            "args": [
-                {
-                    "name": "organizationKey",
-                    "type": "credentials",
-                    "info": "Your organization key",
-                    "required": true
-                },
+            "args": [{
+                "name": "organizationKey",
+                "type": "credentials",
+                "info": "Your organization key",
+                "required": true
+            },
                 {
                     "name": "organizationId",
                     "type": "String",
@@ -1659,11 +1562,10 @@
                     "Authorization": "{$data['organizationKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1673,13 +1575,12 @@
         {
             "name": "getAllProjects",
             "description": "Returns information about all projects for the given organization.",
-            "args": [
-                {
-                    "name": "organizationKey",
-                    "type": "credentials",
-                    "info": "Your organization key",
-                    "required": true
-                },
+            "args": [{
+                "name": "organizationKey",
+                "type": "credentials",
+                "info": "Your organization key",
+                "required": true
+            },
                 {
                     "name": "organizationId",
                     "type": "String",
@@ -1694,11 +1595,10 @@
                     "Authorization": "{$data['organizationKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1708,13 +1608,12 @@
         {
             "name": "createProject",
             "description": "Create a new project in the organization.",
-            "args": [
-                {
-                    "name": "organizationKey",
-                    "type": "credentials",
-                    "info": "Your organization key",
-                    "required": true
-                },
+            "args": [{
+                "name": "organizationKey",
+                "type": "credentials",
+                "info": "Your organization key",
+                "required": true
+            },
                 {
                     "name": "organizationId",
                     "type": "String",
@@ -1732,14 +1631,12 @@
                     "type": "Array",
                     "info": "Specifies users for the project. If any users supplied do not exist, the request will fail. You will receive an error indicating which users are invalid.",
                     "required": true,
-                    "structure": [
-                        {
-                            "name": "email",
-                            "type": "String",
-                            "info": "User email.",
-                            "required": true
-                        }
-                    ]
+                    "structure": [{
+                        "name": "email",
+                        "type": "String",
+                        "info": "User email.",
+                        "required": true
+                    }]
                 }
             ],
             "vendorRequest": {
@@ -1748,21 +1645,18 @@
                 "headers": {
                     "Authorization": "{$data['organizationKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "name",
-                            "users"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "name",
+                        "users"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1772,13 +1666,12 @@
         {
             "name": "updateProject",
             "description": "Update an existing project in the organization.",
-            "args": [
-                {
-                    "name": "organizationKey",
-                    "type": "credentials",
-                    "info": "Your organization key",
-                    "required": true
-                },
+            "args": [{
+                "name": "organizationKey",
+                "type": "credentials",
+                "info": "Your organization key",
+                "required": true
+            },
                 {
                     "name": "organizationId",
                     "type": "String",
@@ -1802,14 +1695,12 @@
                     "type": "Array",
                     "info": "Specifies users for the project. If any users supplied do not exist, the request will fail. You will receive an error indicating which users are invalid.",
                     "required": true,
-                    "structure": [
-                        {
-                            "name": "email",
-                            "type": "String",
-                            "info": "User email.",
-                            "required": true
-                        }
-                    ]
+                    "structure": [{
+                        "name": "email",
+                        "type": "String",
+                        "info": "User email.",
+                        "required": true
+                    }]
                 }
             ],
             "vendorRequest": {
@@ -1818,21 +1709,18 @@
                 "headers": {
                     "Authorization": "{$data['organizationKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "name",
-                            "users"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "name",
+                        "users"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1842,13 +1730,12 @@
         {
             "name": "createAccessKey",
             "description": "Create a new API Key for the project.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1906,23 +1793,20 @@
                 "headers": {
                     "Authorization": "{$data['masterKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "json",
-                        "parameters": [
-                            "name",
-                            "is_active",
-                            "permitted",
-                            "options"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "json",
+                    "parameters": [
+                        "name",
+                        "is_active",
+                        "permitted",
+                        "options"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1932,13 +1816,12 @@
         {
             "name": "getAllAccessKeys",
             "description": "Retrieves a list of Access Keys.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1953,11 +1836,10 @@
                     "Authorization": "{$data['masterKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -1967,13 +1849,12 @@
         {
             "name": "getSingleAccessKey",
             "description": "Retrieves an Access Key definition.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -1994,11 +1875,10 @@
                     "Authorization": "{$data['masterKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -2008,13 +1888,12 @@
         {
             "name": "revokeAccessKey",
             "description": "Revoking an Access Key.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -2035,11 +1914,10 @@
                     "Authorization": "{$data['masterKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -2049,13 +1927,12 @@
         {
             "name": "unrevokeAccessKey",
             "description": "Unrevokes an Access Key.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -2076,11 +1953,10 @@
                     "Authorization": "{$data['masterKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -2090,13 +1966,12 @@
         {
             "name": "deleteCollection",
             "description": "Delete a single event collection.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -2117,11 +1992,10 @@
                     "Authorization": "{$data['masterKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -2131,13 +2005,12 @@
         {
             "name": "deleteEvents",
             "description": "Deletes events meeting criteria of supplied filters, timeframe and timezone parameters",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -2175,22 +2048,19 @@
                 "headers": {
                     "Authorization": "{$data['masterKey']}"
                 },
-                "requestParameters": [
-                    {
-                        "type": "query",
-                        "parameters": [
-                            "filters",
-                            "timeframe",
-                            "timezone"
-                        ]
-                    }
-                ]
+                "requestParameters": [{
+                    "type": "query",
+                    "parameters": [
+                        "filters",
+                        "timeframe",
+                        "timezone"
+                    ]
+                }]
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
@@ -2200,13 +2070,12 @@
         {
             "name": "deleteProperty",
             "description": "Delete a Property.",
-            "args": [
-                {
-                    "name": "masterKey",
-                    "type": "credentials",
-                    "info": "Your master key",
-                    "required": true
-                },
+            "args": [{
+                "name": "masterKey",
+                "type": "credentials",
+                "info": "Your master key",
+                "required": true
+            },
                 {
                     "name": "projectId",
                     "type": "String",
@@ -2233,11 +2102,10 @@
                     "Authorization": "{$data['masterKey']}"
                 }
             },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
+            "callbacks": [{
+                "name": "error",
+                "info": "Error"
+            },
                 {
                     "name": "success",
                     "info": "Success"
