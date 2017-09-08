@@ -161,7 +161,7 @@
                 "url": "https:\/\/api.keen.io\/3.0\/projects\/{$data['projectId']}\/events\/{$data['collectionName']}",
                 "method": "get",
                 "headers": {
-                    "Authorization": "{$data['writeKey']}"
+                    "Authorization": "{$data['readKey']}"
                 }
             },
             "callbacks": [
@@ -238,7 +238,7 @@
                 {
                     "name": "timeframe",
                     "type": "String",
-                    "info": "Limits analysis to a specific period of time when the events occurred.",
+                    "info": "Limits analysis to a specific period of time when the events occurred. Example: this_7_days",
                     "required": true
                 }
             ],
@@ -1118,6 +1118,12 @@
                     "info": "Change the name of the query.",
                     "required": true
                 },
+                {
+                    "name": "query",
+                    "type": "JSON",
+                    "info": "Request query.",
+                    "required": true
+                }
                 {
                     "name": "refreshRate",
                     "type": "String",

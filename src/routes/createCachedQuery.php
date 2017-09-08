@@ -4,7 +4,7 @@ $app->post('/api/KeenIO/createCachedQuery', function ($request, $response) {
 
     $settings = $this->settings;
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['masterKey','projectId','queryName','refreshRate']);
+    $validateRes = $checkRequest->validate($request, ['masterKey','projectId','queryName','refreshRate','query']);
 
     if(!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback']=='error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
@@ -12,10 +12,10 @@ $app->post('/api/KeenIO/createCachedQuery', function ($request, $response) {
         $post_data = $validateRes;
     }
 
-    $requiredParams = ['masterKey'=>'masterKey','projectId'=>'projectId','queryName'=>'queryName','refreshRate'=>'refresh_rate'];
+    $requiredParams = ['masterKey'=>'masterKey','projectId'=>'projectId','queryName'=>'queryName','refreshRate'=>'refresh_rate','query'=>'query'];
     $optionalParams = [];
     $bodyParams = [
-       'json' => ['refresh_rate']
+       'json' => ['refresh_rate','query']
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);

@@ -64,7 +64,7 @@ Return the number of events in the collection matching given criteria.
 | readKey        | Credentials| Your read key
 | projectId      | String     | Project identifier.
 | eventCollection| String     | Specifies the name of the event collection to analyze.
-| timeframe      | String     | Limits analysis to a specific period of time when the events occurred.
+| timeframe      | String     | Limits analysis to a specific period of time when the events occurred. Example: ```this_7_days```
 
 ## KeenIO.getUniqueEventsCount
 Return the number of events with unique values, for a target property in a collection matching given criteria. A common use for this is to count the number of unique users who performed an event.
