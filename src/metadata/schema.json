@@ -211,53 +211,6 @@
             ]
         },
         {
-            "name": "getSingleProperty",
-            "description": "Return details for a single property in a given event collection.",
-            "args": [
-                {
-                    "name": "readKey",
-                    "type": "credentials",
-                    "info": "Your write key",
-                    "required": true
-                },
-                {
-                    "name": "projectId",
-                    "type": "String",
-                    "info": "Project identifier.",
-                    "required": true
-                },
-                {
-                    "name": "collectionName",
-                    "type": "String",
-                    "info": "Collection name.",
-                    "required": true
-                },
-                {
-                    "name": "propertyName",
-                    "type": "String",
-                    "info": "Property name.",
-                    "required": true
-                }
-            ],
-            "vendorRequest": {
-                "url": "https:\/\/api.keen.io\/v3\/projects\/{$data['projectId']}\/events\/{$data['collectionName']}\/properties\/{$data['propertyName']}",
-                "method": "get",
-                "headers": {
-                    "Authorization": "{$data['writeKey']}"
-                }
-            },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
-                {
-                    "name": "success",
-                    "info": "Success"
-                }
-            ]
-        },
-        {
             "name": "getEventsCount",
             "description": "Return the number of events in the collection matching given criteria.",
             "args": [

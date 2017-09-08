@@ -5,7 +5,6 @@ $routes = [
     'createMultipleEvents',
     'getSingleEventCollection',
     'getAllCollections',
-    'getSingleProperty',
     'getEventsCount',
     'getUniqueEventsCount',
     'getMinimumValue',

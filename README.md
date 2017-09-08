@@ -56,16 +56,6 @@ Return schema information for all the event collections in a given project.
 | readKey  | Credentials| Your read key
 | projectId| String     | Project identifier.
 
-## KeenIO.getSingleProperty
-Return details for a single property in a given event collection.
-
-| Field         | Type       | Description
-|---------------|------------|----------
-| readKey       | Credentials| Your write key
-| projectId     | String     | Project identifier.
-| collectionName| String     | Collection name.
-| propertyName  | String     | Property name.
-
 ## KeenIO.getEventsCount
 Return the number of events in the collection matching given criteria.
 
