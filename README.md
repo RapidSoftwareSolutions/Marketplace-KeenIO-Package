@@ -142,7 +142,7 @@ Calculate a specified percentile value for a target property, among all events i
 | eventCollection| String     | Specifies the name of the event collection to analyze.
 | targetProperty | String     | Specifies the name of the property to analyze.
 | timeframe      | String     | Limits analysis to a specific period of time when the events occurred.
-| percentile     | String     | Specifies the percentile to calculate, supporting 0-100 with two decimal places of precision. Example: 99.99.
+| percentile     | Number     | Specifies the percentile to calculate.
 
 ## KeenIO.getUniqueValues
 Return a list of unique property values for a target property, among all events in a collection matching given criteria.

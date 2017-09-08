@@ -725,8 +725,8 @@
                 },
                 {
                     "name": "percentile",
-                    "type": "String",
-                    "info": "Specifies the percentile to calculate, supporting 0-100 with two decimal places of precision. Example: 99.99.",
+                    "type": "Number",
+                    "info": "Specifies the percentile to calculate.",
                     "required": true
                 }
             ],
