@@ -27,6 +27,11 @@
             "accessKey"
         ]
     },
+    "steps": [
+        "Sign in https://keen.io.",
+        "Create a new project.",
+        "Navigate to project->access."
+    ],
     "blocks": [{
         "name": "createEvent",
         "description": "Records a single event to a given event collection.",
